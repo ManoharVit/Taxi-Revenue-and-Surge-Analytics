@@ -8,8 +8,8 @@ __pycache__/
 
 Trips_pipeline/**/taxi_pipeline/
 Trips_pipeline/dbt_packages/
-Trips_pipeline/logs/
-Trips_pipeline/target/
+#Trips_pipeline/logs/
+#Trips_pipeline/target/
 
 # Raw data: ignore everything in the data folder first
 nyc 2025 data/*

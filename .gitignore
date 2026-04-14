@@ -1,0 +1,16 @@
+# mac / python / notebooks
+.DS_Store
+__pycache__/
+.ipynb_checkpoints/
+
+# DuckDB
+*.duckdb
+
+
+# Raw data: ignore everything in the data folder first
+nyc 2025 data/*
+
+# Keep only these files in that folder
+!nyc 2025 data/taxi_zone_lookup.csv
+!nyc 2025 data/yellow_tripdata_2025-*.parquet
+!nyc 2025 data/green_tripdata_2025-*.parquet

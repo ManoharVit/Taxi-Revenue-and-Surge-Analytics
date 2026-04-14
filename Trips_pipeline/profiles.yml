@@ -1,0 +1,7 @@
+trips_pipeline:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "/Users/girimanoharv/Documents/nyc-taxi-analytics-pipeline-master/trips.duckdb"
+      threads: 4

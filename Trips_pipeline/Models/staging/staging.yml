@@ -1,0 +1,66 @@
+version: 2
+
+models:
+  - name: stg_trips
+    description: Standardized 2025 yellow and green taxi trip data.
+
+    columns:
+      - name: service_type
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['yellow', 'green']
+
+      - name: pickup_datetime
+        tests:
+          - not_null
+
+      - name: dropoff_datetime
+        tests:
+          - not_null
+
+      - name: pickup_location_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_zones')
+                field: location_id
+
+      - name: dropoff_location_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_zones')
+                field: location_id
+
+      - name: trip_date
+        tests:
+          - not_null
+
+      - name: total_amount
+        tests:
+          - not_null
+
+      - name: trip_distance
+        tests:
+          - not_null
+
+  - name: stg_zones
+    description: Cleaned taxi zone lookup table.
+
+    columns:
+      - name: location_id
+        tests:
+          - not_null
+          - unique
+
+      - name: borough
+        tests:
+          - not_null
+
+      - name: zone_name
+        tests:
+          - not_null

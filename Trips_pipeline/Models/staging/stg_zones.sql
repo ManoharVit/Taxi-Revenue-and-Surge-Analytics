@@ -1,0 +1,25 @@
+{{ config(materialized='view') }}
+
+with source as (
+
+    select *
+    from {{ source('raw', 'raw_zones') }}
+
+),
+
+cleaned as (
+
+    select
+        cast(LocationID as integer) as location_id,
+        trim(Borough) as borough,
+        trim(Zone) as zone_name,
+        trim(service_zone) as service_zone
+
+    from source
+
+)
+
+select *
+from cleaned
+where borough not in ('Unknown', 'N/A')
+  and location_id is not null

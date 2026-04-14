@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: main
+    tables:
+      - name: raw_trips
+        description: Raw yellow and green taxi trips loaded from parquet files into DuckDB.
+      - name: raw_zones
+        description: Raw TLC taxi zone lookup table loaded from CSV.

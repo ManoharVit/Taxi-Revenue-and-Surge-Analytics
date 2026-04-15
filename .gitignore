@@ -6,8 +6,9 @@ __pycache__/
 # DuckDB
 *.duckdb
 
+2025_trips_analysis.ipynb
 Trips_pipeline/**/taxi_pipeline/
-Trips_pipeline/dbt_packages/
+#Trips_pipeline/dbt_packages/
 #Trips_pipeline/logs/
 #Trips_pipeline/target/
 

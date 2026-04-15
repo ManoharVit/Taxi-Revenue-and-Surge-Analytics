@@ -3,19 +3,17 @@
 __pycache__/
 .ipynb_checkpoints/
 
-# DuckDB
-*.duckdb
-
 2025_trips_analysis.ipynb
-Trips_pipeline/**/taxi_pipeline/
-#Trips_pipeline/dbt_packages/
-#Trips_pipeline/logs/
-#Trips_pipeline/target/
 
 # Raw data: ignore everything in the data folder first
 nyc 2025 data/*
-
 # Keep only these files in that folder
 !nyc 2025 data/taxi_zone_lookup.csv
 !nyc 2025 data/yellow_tripdata_2025-*.parquet
 !nyc 2025 data/green_tripdata_2025-*.parquet
+*.duckdb
+Trips_pipeline/trips.duckdb
+nyc 2025 data/
+Trips_pipeline/dbt_packages/
+Trips_pipeline/target/
+Trips_pipeline/logs/
